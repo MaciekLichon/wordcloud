@@ -8,13 +8,13 @@ import { useState } from 'react';
 const App = () => {
 
   const [user, setUser] = useState();
-  const [score, setScore] = useState();
+  const [score, setScore] = useState(undefined);
 
   return (
     <Container>
       { !user && <Home setUser={setUser} /> }
-      { (user && !score) && <Game setScore={setScore} /> }
-      { (user && score) && <Result user={user} score={score} setScore={setScore} /> }
+      { (user && score === undefined) && <Game setScore={setScore} /> }
+      { (user && score !== undefined) && <Result user={user} score={score} setScore={setScore} /> }
     </Container>
   );
 };

@@ -11,7 +11,7 @@ const Result = ({ user, score, setScore }) => {
         <br/>
         <span className={styles.score}>{score} points</span>
       </h2>
-      <Button action={() => setScore(null)}>Play again</Button>
+      <Button action={() => setScore(undefined)}>Play again</Button>
     </div>
   );
 };
